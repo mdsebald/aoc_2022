@@ -99,6 +99,8 @@ defmodule Day02 do
 
   Following the Elf's instructions for the second column, what would your
   total score be if everything goes exactly according to your strategy guide?
+
+  Your puzzle answer was 14204.
   """
 
   def calc_total_score2() do
