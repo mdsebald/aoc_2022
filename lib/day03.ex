@@ -137,13 +137,11 @@ defmodule Day03 do
     end)
   end
 
-
-  # Common functions
-
   defp find_badge([r1, r2, r3]) do
     MapSet.intersection(r1, r2) |> MapSet.intersection(r3)
   end
 
+  # Common functions
   defp to_map_set(string) do
     MapSet.new(String.to_charlist(string))
   end
