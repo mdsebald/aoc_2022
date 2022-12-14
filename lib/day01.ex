@@ -1,6 +1,7 @@
 defmodule Day01 do
   @moduledoc """
   --- Day 1: Calorie Counting ---
+
   Santa's reindeer typically eat regular reindeer food, but they need a lot
   of magical energy to deliver presents on Christmas. For that, their
   favorite snack is a special type of star fruit that only grows deep in the
@@ -73,6 +74,7 @@ defmodule Day01 do
 
   @doc """
   -- Part Two ---
+
   By the time you calculate the answer to the Elves' question, they've
   already realized that the Elf carrying the most Calories of food might
   eventually run out of snacks.
