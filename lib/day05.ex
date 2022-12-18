@@ -88,7 +88,7 @@ defmodule Day05 do
     stacks =
       Enum.reduce(moves, stacks, fn move, stacks ->
         {from, to, count} = parse_move(move)
-        move_boxes(stacks, from, to, count)
+        move_crates(stacks, from, to, count)
       end)
 
     get_stack_tops(stacks)
@@ -166,7 +166,7 @@ defmodule Day05 do
     stacks =
       Enum.reduce(moves, stacks, fn move, stacks ->
         {from, to, count} = parse_move(move)
-        move_boxes2(stacks, from, to, count)
+        move_crates2(stacks, from, to, count)
       end)
 
     get_stack_tops(stacks)
@@ -186,18 +186,18 @@ defmodule Day05 do
     String.split(stacks_str, "\n")
     |> Enum.map(&String.to_charlist(&1))
     |> Enum.reverse()
-    |> Enum.reduce(initial_stacks(), &add_boxes(&1, &2))
+    |> Enum.reduce(initial_stacks(), &add_crates(&1, &2))
   end
 
-  defp add_boxes(boxes, stacks) do
+  defp add_crates(crates, stacks) do
     Enum.reduce(1..9, stacks, fn index, stacks ->
       pos = (index - 1) * 4 + 1
 
-      case Enum.at(boxes, pos) do
-        box when ?A <= box and box <= ?Z ->
-          add_box(stacks, index, box)
+      case Enum.at(crates, pos) do
+        crate when ?A <= crate and crate <= ?Z ->
+          add_crate(stacks, index, crate)
 
-        _not_a_box ->
+        _not_a_crate ->
           stacks
       end
     end)
@@ -217,44 +217,44 @@ defmodule Day05 do
     }
   end
 
-  defp move_boxes(stacks, from, to, count) do
+  defp move_crates(stacks, from, to, count) do
     Enum.reduce(1..count, stacks, fn _, stacks ->
-      move_box(stacks, from, to)
+      move_crate(stacks, from, to)
     end)
   end
 
-  defp move_boxes2(stacks, from, to, count) do
-    {stacks, boxes} = remove_boxes(stacks, from, count)
-    add_boxes(stacks, to, boxes)
+  defp move_crates2(stacks, from, to, count) do
+    {stacks, crates} = remove_crates(stacks, from, count)
+    add_crates(stacks, to, crates)
   end
 
-  defp move_box(stacks, from, to) do
-    {stacks, box} = remove_box(stacks, from)
-    add_box(stacks, to, box)
+  defp move_crate(stacks, from, to) do
+    {stacks, crate} = remove_crate(stacks, from)
+    add_crate(stacks, to, crate)
   end
 
-  defp add_box(stacks, index, box) do
+  defp add_crate(stacks, index, crate) do
     stack = Map.get(stacks, index)
-    Map.put(stacks, index, [box] ++ stack)
+    Map.put(stacks, index, [crate] ++ stack)
   end
 
-  defp add_boxes(stacks, index, boxes) do
+  defp add_crates(stacks, index, crates) do
     stack = Map.get(stacks, index)
-    Map.put(stacks, index,  boxes ++ stack)
+    Map.put(stacks, index,  crates ++ stack)
   end
 
-  defp remove_box(stacks, index) do
+  defp remove_crate(stacks, index) do
     stack = Map.get(stacks, index)
-    [box | rem_stack] = stack
-    {Map.put(stacks, index, rem_stack), box}
+    [crate | rem_stack] = stack
+    {Map.put(stacks, index, rem_stack), crate}
   end
 
-  defp remove_boxes(stacks, index, count) do
+  defp remove_crates(stacks, index, count) do
     stack = Map.get(stacks, index)
     rem_length = length(stack) - count
-    boxes = Enum.take(stack, count)
-    rem_boxes = Enum.take(stack, -rem_length)
-    {Map.put(stacks, index, rem_boxes), boxes}
+    crates = Enum.take(stack, count)
+    rem_crates = Enum.take(stack, -rem_length)
+    {Map.put(stacks, index, rem_crates), crates}
   end
 
   defp init_moves(moves_str) do
