@@ -69,7 +69,8 @@ defmodule Day01 do
   """
 
   def find_most_total_calories do
-    get_calories() |> get_max_calories()
+    {_, _, max} = get_calories() |> get_max_calories()
+    max
   end
 
   @doc """
@@ -123,8 +124,8 @@ defmodule Day01 do
   end
 
 
-  defp get_calories() do
-    File.read!("inputs/day01.txt")
+  defp get_calories(input \\"inputs/day01.txt") do
+    File.read!(input)
     |> String.split("\n\n")
     |> Enum.map(fn calories_str ->
       String.split(calories_str, "\n")

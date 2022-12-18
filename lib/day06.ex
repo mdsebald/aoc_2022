@@ -111,7 +111,7 @@ defmodule Day06 do
 
   # Common functions
 
-  defp get_packet() do
-    File.read!("inputs/day06.txt")
+  defp get_packet(input \\"inputs/day06.txt") do
+    File.read!(input)
   end
 end

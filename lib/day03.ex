@@ -156,8 +156,8 @@ defmodule Day03 do
     end
   end
 
-  defp get_rucksacks() do
-    File.read!("inputs/day03.txt")
+  defp get_rucksacks(input \\"inputs/day03.txt") do
+    File.read!(input)
     |> String.split("\n")
   end
 end

@@ -174,9 +174,9 @@ defmodule Day05 do
 
   # Common functions
 
-  defp get_stacks_and_moves() do
+  defp get_stacks_and_moves(input \\"inputs/day05.txt") do
     [stacks_str, moves_str] =
-      File.read!("inputs/day05.txt")
+      File.read!(input)
       |> String.split("\n\n")
 
     {init_stacks(stacks_str), init_moves(moves_str)}

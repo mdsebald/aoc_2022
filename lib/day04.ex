@@ -123,8 +123,8 @@ defmodule Day04 do
     |> Enum.map(&String.to_integer(&1))
   end
 
-  defp get_sections() do
-    File.read!("inputs/day04.txt")
+  defp get_sections(input \\"inputs/day04.txt") do
+    File.read!(input)
     |> String.split("\n")
     |> Enum.map(&convert_pair(&1))
   end
