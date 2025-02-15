@@ -120,7 +120,7 @@ defmodule Day02 do
 
   # Common functions
 
-  defp get_strategy_guide(input \\"inputs/day02.txt") do
+  defp get_strategy_guide(input \\ "inputs/day02.txt") do
     File.read!(input)
     |> String.split("\n")
   end

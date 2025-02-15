@@ -98,7 +98,9 @@ defmodule Day06 do
   def get_message_start() do
     get_packet()
     |> String.to_charlist()
-    |> Enum.reduce_while({[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 0}, fn char, {last_fourteen, count} ->
+    |> Enum.reduce_while({[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 0}, fn char,
+                                                                             {last_fourteen,
+                                                                              count} ->
       [_ | rem] = last_fourteen
       last_fourteen = rem ++ [char]
 
@@ -111,7 +113,7 @@ defmodule Day06 do
 
   # Common functions
 
-  defp get_packet(input \\"inputs/day06.txt") do
+  defp get_packet(input \\ "inputs/day06.txt") do
     File.read!(input)
   end
 end

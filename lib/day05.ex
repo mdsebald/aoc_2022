@@ -174,7 +174,7 @@ defmodule Day05 do
 
   # Common functions
 
-  defp get_stacks_and_moves(input \\"inputs/day05.txt") do
+  defp get_stacks_and_moves(input \\ "inputs/day05.txt") do
     [stacks_str, moves_str] =
       File.read!(input)
       |> String.split("\n\n")
@@ -240,7 +240,7 @@ defmodule Day05 do
 
   defp add_crates(stacks, index, crates) do
     stack = Map.get(stacks, index)
-    Map.put(stacks, index,  crates ++ stack)
+    Map.put(stacks, index, crates ++ stack)
   end
 
   defp remove_crate(stacks, index) do
@@ -267,7 +267,7 @@ defmodule Day05 do
   end
 
   defp get_stack_tops(stacks) do
-    Enum.reduce(1..9, '', fn index, tops ->
+    Enum.reduce(1..9, ~c"", fn index, tops ->
       [top | _] = Map.get(stacks, index)
       tops ++ [top]
     end)

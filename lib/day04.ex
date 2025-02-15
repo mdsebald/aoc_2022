@@ -113,7 +113,7 @@ defmodule Day04 do
   end
 
   defp overlapped?([x1, x2, y1, y2]) do
-    (y1 <= x2 and x1 <= y2)
+    y1 <= x2 and x1 <= y2
   end
 
   # Common functions
@@ -123,7 +123,7 @@ defmodule Day04 do
     |> Enum.map(&String.to_integer(&1))
   end
 
-  defp get_sections(input \\"inputs/day04.txt") do
+  defp get_sections(input \\ "inputs/day04.txt") do
     File.read!(input)
     |> String.split("\n")
     |> Enum.map(&convert_pair(&1))

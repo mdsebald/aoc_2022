@@ -109,7 +109,6 @@ defmodule Day01 do
     max_val1 + max_val2 + max_val3
   end
 
-
   # Common functions
   defp get_max_calories(calories_lists) do
     Enum.reduce(calories_lists, {0, 0, 0}, fn calories_list, {index, max_idx, max_val} ->
@@ -123,8 +122,7 @@ defmodule Day01 do
     end)
   end
 
-
-  defp get_calories(input \\"inputs/day01.txt") do
+  defp get_calories(input \\ "inputs/day01.txt") do
     File.read!(input)
     |> String.split("\n\n")
     |> Enum.map(fn calories_str ->

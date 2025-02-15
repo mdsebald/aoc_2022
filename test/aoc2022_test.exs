@@ -34,11 +34,11 @@ defmodule Aoc2022Test do
   end
 
   test "Day 5: Supply Stacks, Part 1: What crate ends up on top of each stack (single move)" do
-    assert Day05.top_of_stacks() == 'CWMTGHBDW'
+    assert Day05.top_of_stacks() == ~c"CWMTGHBDW"
   end
 
   test "Day 5: Supply Stacks, Part 2: What crate ends up on top of each stack (multi move)" do
-    assert Day05.top_of_stacks2() == 'SSCGWJCRB'
+    assert Day05.top_of_stacks2() == ~c"SSCGWJCRB"
   end
 
   test "Day 6: Tuning Trouble, Part 1: Count of characters to detect start of packet" do
