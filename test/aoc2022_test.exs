@@ -49,11 +49,11 @@ defmodule Aoc2022Test do
     assert Day06.get_message_start() == 3774
   end
 
-  # test "Day 7, Part 1: " do
-  #   assert Day07
-  # end
+  test "Day 7: No Space Left On Device, Part 1: Total size of dirs less than 100k" do
+   assert Day07.total_size_of_dirs_lt_100K() == 1_182_909
+  end
 
-  # test "Day 7, Part 2: " do
-  #   assert Day07
-  # end
+  test "Day 7, Part 2: Find smallest dir to delete" do
+    assert Day07.find_smallest_dir_to_delete() == 2832508
+  end
 end
