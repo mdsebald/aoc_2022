@@ -30,7 +30,6 @@ defmodule Day07 do
     total_used = find_total_used(all_dirs)
     free_space = 70_000_000 - total_used
     min_to_free = 30_000_000 - free_space
-    IO.puts("Min to free: #{min_to_free}")
 
     Enum.filter(all_dirs, fn {_dir, size} -> size >= min_to_free end)
     |> Enum.map(fn {_dir, size} -> size end)
@@ -45,7 +44,6 @@ defmodule Day07 do
     |> elem(1)
     |> compute_sizes()
   end
-
 
   defp find_dirs_lt_100K(all_dirs) do
     Enum.filter(all_dirs, fn {_dir, size} -> size <= 100_000 end)
