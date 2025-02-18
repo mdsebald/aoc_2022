@@ -50,10 +50,18 @@ defmodule Aoc2022Test do
   end
 
   test "Day 7: No Space Left On Device, Part 1: Total size of dirs less than 100k" do
-   assert Day07.total_size_of_dirs_lt_100K() == 1_182_909
+    assert Day07.total_size_of_dirs_lt_100K() == 1_182_909
   end
 
-  test "Day 7, Part 2: Find smallest dir to delete" do
-    assert Day07.find_smallest_dir_to_delete() == 2832508
+  test "Day 7: No Space Left On Device, Part 2: Find smallest dir to delete" do
+    assert Day07.find_smallest_dir_to_delete() == 2_832_508
+  end
+
+  test "Day 8: Treetop Tree House, Part 1: How many trees visible" do
+    assert Day08.solve_1() == 1840
+  end
+
+  test "Day 8:, Treetop Tree House, Part 2: What is the highest scenic score possible for any tree?" do
+    assert Day08.solve_2() == 405_769
   end
 end
