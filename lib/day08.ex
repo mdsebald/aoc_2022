@@ -47,7 +47,7 @@ defmodule Day08 do
 
   Consider each tree on your map. What is the highest scenic score possible for any tree?
 
-  Your puzzle answer was
+  Your puzzle answer was 405,769
   """
   def solve_2() do
     get_input() |> highest_view_score()
