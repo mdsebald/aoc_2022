@@ -64,4 +64,12 @@ defmodule Aoc2022Test do
   test "Day 8:, Treetop Tree House, Part 2: What is the highest scenic score possible for any tree?" do
     assert Day08.solve_2() == 405_769
   end
+
+  test "Day 9: Rope Bridge, Part 1: How many positions does the tail of the rope visit at least once" do
+    assert Day09.solve_1() == 6376
+  end
+
+  test "Day 9:, Rope Bridge, Part 2: How many positions does the tail of the 10 knot rope visit at least once" do
+    assert Day09.solve_2() == 2607
+  end
 end
