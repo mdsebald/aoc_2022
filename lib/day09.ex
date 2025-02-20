@@ -1,7 +1,7 @@
 defmodule Day09 do
   @moduledoc """
-
   --- Day 9: Rope Bridge ---
+
   How many positions does the tail of the rope visit at least once?
 
   Your puzzle answer was 6376
