@@ -81,4 +81,12 @@ defmodule Aoc2022Test do
     # "EGLHBLFJ"
     assert Day10.solve_2() == :ok
   end
+
+  test "Day 11: Monkey in the Middle, Part 1: What is the level of monkey business after 20 rounds" do
+    assert Day11.solve_1() == 56_120
+  end
+
+  test "Day 11: Monkey in the Middle, Part 2: what is the level of monkey business after 10000 rounds" do
+    assert Day11.solve_2() == 24_389_045_529
+  end
 end
