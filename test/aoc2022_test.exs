@@ -86,7 +86,15 @@ defmodule Aoc2022Test do
     assert Day11.solve_1() == 56_120
   end
 
-  test "Day 11: Monkey in the Middle, Part 2: what is the level of monkey business after 10000 rounds" do
+  test "Day 11: Monkey in the Middle, Part 2: What is the level of monkey business after 10000 rounds" do
     assert Day11.solve_2() == 24_389_045_529
+  end
+
+  test "Day 12: Hill Climbing Algorithm, Part 1: What is the fewest steps required to move from your current position to the location that should get the best signal" do
+    assert Day12.solve_1() == 370
+  end
+
+  test "Day 12: Hill Climbing Algorithm, Part 2: What is the fewest steps required to move starting from any square with elevation a to the location that should get the best signal" do
+    assert Day12.solve_2() == 363
   end
 end
