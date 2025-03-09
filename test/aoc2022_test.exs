@@ -97,4 +97,12 @@ defmodule Aoc2022Test do
   test "Day 12: Hill Climbing Algorithm, Part 2: What is the fewest steps required to move starting from any square with elevation a to the location that should get the best signal" do
     assert Day12.solve_2() == 363
   end
+
+  test "Day 13: Hill Climbing Algorithm, Part 1: What is the sum of the indices of the pairs in the right order" do
+    assert Day13.solve_1() == 4734
+  end
+
+  test "Day 13: Hill Climbing Algorithm, Part 2:  What is the decoder key for the distress signal" do
+    assert Day13.solve_2() == 21_836
+  end
 end
