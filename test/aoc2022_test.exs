@@ -102,7 +102,15 @@ defmodule Aoc2022Test do
     assert Day13.solve_1() == 4734
   end
 
-  test "Day 13: Hill Climbing Algorithm, Part 2:  What is the decoder key for the distress signal" do
+  test "Day 13: Hill Climbing Algorithm, Part 2: What is the decoder key for the distress signal" do
     assert Day13.solve_2() == 21_836
+  end
+
+  test "Day 14: Regolith Reservoir, Part 1: How many units of sand come to rest before sand starts flowing into the abyss below" do
+    assert Day14.solve_1() == 618
+  end
+
+  test "Day 14: Regolith Reservoir, Part 2: How many units of sand come to rest when cave floor is added" do
+    assert Day14.solve_2() == 26_358
   end
 end
