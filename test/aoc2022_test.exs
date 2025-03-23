@@ -113,4 +113,12 @@ defmodule Aoc2022Test do
   test "Day 14: Regolith Reservoir, Part 2: How many units of sand come to rest when cave floor is added" do
     assert Day14.solve_2() == 26_358
   end
+
+  test "Day 15: Beacon Exclusion Zone, Part 1: In the row where y=2000000, how many positions cannot contain a beacon" do
+    assert Day15.solve_1() == 5_688_618
+  end
+
+  test "Day 15: Beacon Exclusion Zone, Part 2: Find the only possible position for the distress beacon. What is its tuning frequency" do
+    assert Day15.solve_2() == 12_625_383_204_261
+  end
 end
